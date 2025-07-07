@@ -13,11 +13,12 @@
         <div id="disqus_thread"></div>
         <script>
             var disqus_config = function () {
+                const params = new URLSearchParams(window.location.search);
+                const userData = params.get('userData');
+                const id = params.get('id');
                 this.page.url = window.location.href;
-                this.page.identifier = window.location.search.id;
-                this.page.remote_auth_s3 = decodeURIComponent(
-                    window.location.search.userData
-                );
+                this.page.identifier = id;
+                this.page.remote_auth_s3 = decodeURIComponent(userData);
                 this.page.api_key =
                     'iRWHlPzfOcEYdFPQH030lyy0E90sikxGakT9H9k0hvJFRjeJaYBWrPoRjz2eOGKk';
             };
