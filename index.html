@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bs" data-disqus-language="bs">
+<html>
     <head>
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -10,7 +10,7 @@
         <div id="root"></div>
 
         <!-- Disqus embed starts -->
-        <div id="disqus_thread" lang="bs" data-disqus-language="bs"></div>
+        <div id="disqus_thread"></div>
         <script>
             var disqus_config = function () {
                 const params = new URLSearchParams(window.location.search);
@@ -28,22 +28,9 @@
             (function () {
                 var d = document,
                     s = d.createElement('script');
-                s.src = 'https://eldiablo-1.disqus.com/embed.js';
+                s.src = 'https://eldiablo-1.disqus.com/embed.js?language=bs';
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);
-                const language =
-                    new URLSearchParams(window.location.search).get(
-                        'language'
-                    ) ?? 'en';
-                const html = document.querySelector('html');
-                if (html) {
-                    html.setAttribute('lang', language);
-                }
-                const disqusThread = document.getElementById('disqus_thread');
-                if (disqusThread) {
-                    disqusThread.setAttribute('lang', language);
-                    disqusThread.setAttribute('data-disqus-language', language);
-                }
             })();
         </script>
         <noscript>
