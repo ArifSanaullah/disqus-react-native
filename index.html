@@ -16,8 +16,11 @@
                 const params = new URLSearchParams(window.location.search);
                 const userData = params.get('userData');
                 const id = params.get('id');
+                const language = params.get('language');
                 this.page.url = window.location.href;
                 this.page.identifier = id;
+                this.page.title = id;
+                this.page.language = language || 'en';
                 this.page.remote_auth_s3 = decodeURIComponent(userData);
                 this.page.api_key =
                     'iRWHlPzfOcEYdFPQH030lyy0E90sikxGakT9H9k0hvJFRjeJaYBWrPoRjz2eOGKk';
