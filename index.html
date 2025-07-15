@@ -24,20 +24,20 @@
                 this.page.remote_auth_s3 = decodeURIComponent(userData);
                 this.page.api_key =
                     'iRWHlPzfOcEYdFPQH030lyy0E90sikxGakT9H9k0hvJFRjeJaYBWrPoRjz2eOGKk';
+                const html = document.querySelector('html');
+                if (html) {
+                    html.setAttribute('lang', this.page.language);
+                }
+                const disqusThread = document.getElementById('disqus_thread');
+                if (disqusThread) {
+                    disqusThread.setAttribute('lang', this.page.language);
+                }
             };
             (function () {
                 var d = document,
                     s = d.createElement('script');
                 s.src = 'https://eldiablo-1.disqus.com/embed.js';
                 s.setAttribute('data-timestamp', +new Date());
-                const html = d.querySelector('html');
-                if (html) {
-                    html.setAttribute('lang', this.page.language);
-                }
-                const disqusThread = d.getElementById('disqus_thread');
-                if (disqusThread) {
-                    disqusThread.setAttribute('lang', this.page.language);
-                }
                 (d.head || d.body).appendChild(s);
             })();
         </script>
