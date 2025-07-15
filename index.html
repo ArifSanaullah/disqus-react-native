@@ -30,6 +30,14 @@
                     s = d.createElement('script');
                 s.src = 'https://eldiablo-1.disqus.com/embed.js';
                 s.setAttribute('data-timestamp', +new Date());
+                const html = d.querySelector('html');
+                if (html) {
+                    html.setAttribute('lang', this.page.language);
+                }
+                const disqusThread = d.getElementById('disqus_thread');
+                if (disqusThread) {
+                    disqusThread.setAttribute('lang', this.page.language);
+                }
                 (d.head || d.body).appendChild(s);
             })();
         </script>
